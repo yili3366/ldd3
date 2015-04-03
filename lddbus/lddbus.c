@@ -21,7 +21,7 @@
 #include <linux/kernel.h>
 #include <linux/init.h>
 #include <linux/string.h>
-#include "lddbus.h"
+#include "../include/lddbus.h"
 
 MODULE_AUTHOR("Jonathan Corbet");
 MODULE_LICENSE("Dual BSD/GPL");
@@ -30,8 +30,9 @@ static char *Version = "$Revision: 1.9 $";
 /*
  * Respond to hotplug events.
  */
-static int ldd_uevent(struct device *dev, struct kobj_uevent_env *env) {
-	if (add_uevent_var(env, "LDDVUS_VERSION=%s", Version))
+static int ldd_uevent(struct device *dev, struct kobj_uevent_env *env)
+{
+	if (add_uevent_var(env, "LDDBUS_VERSION=%s", Version))
 		return -ENOMEM;
 	return 0;
 }

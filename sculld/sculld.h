@@ -16,7 +16,7 @@
 #include <linux/ioctl.h>
 #include <linux/cdev.h>
 #include <linux/device.h>
-#include "lddbus.h"
+#include "../include/lddbus.h"
 
 /*
  * Macros to help debugging
